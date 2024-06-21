@@ -29,7 +29,7 @@ async def create_city(
     return created_city if created_city else Response(status_code=204)
 
 
-@router.delete("/cities/{city_id}", response_model=schemas.City)
+@router.delete("/cities/{city_id}/", response_model=schemas.City)
 async def delete_city(
         city_id: int,
         db: AsyncSession = Depends(get_db)):
